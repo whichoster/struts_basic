@@ -1,4 +1,9 @@
-# struts_basic
+ 
+ # Struts + Webjars 
+ <p style="display:inline-block;">
+ <img src="https://struts.apache.org/img/struts-logo.svg" alt="struts" width="200" />  
+ <img src="https://www.webjars.org/assets/logo.png" alt="webjars" width="50" heigth="50"/> </div>
+</p>
 This proyect have examples how to integrate struts 2 with webjars components
 
 This proyect was created using maven so i assumed you understand how to use Maven.
@@ -21,8 +26,7 @@ mvn jetty:run
 
 ```
 Go to this URL http://localhost:8080/helloworld/index.action where you should see the following:
-![struts and webjars](https://github.com/whichoster/struts_basic/blob/master/doc/Captura%20de%20pantalla%20de%202019-02-12%2009-33-32.png)
-
+![struts and webjars](/doc/Captura%20de%20pantalla%20de%202019-02-12%2009-33-32.png)
 
 ### References
 The proyect was build following the apache Struts 2 tutorial.
