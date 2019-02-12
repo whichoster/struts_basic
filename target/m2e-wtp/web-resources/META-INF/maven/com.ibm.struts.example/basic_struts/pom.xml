@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ibm.struts.example</groupId>
+	<artifactId>basic_struts</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<name>basic_struts Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<struts2.version>2.5.20</struts2.version>
+		<log4j2.version>2.10.0</log4j2.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.struts</groupId>
+				<artifactId>struts2-bom</artifactId>
+				<version>${struts2.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-bom</artifactId>
+				<version>${log4j2.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<!-- start UI LIbs -->
+		<!-- https://mvnrepository.com/artifact/org.webjars/webjars-servlet-2.x -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-servlet-2.x</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<version>0.30</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>popper.js</artifactId>
+			<version>1.14.7</version>
+		</dependency>
+		<!-- end UI Libs -->
+	</dependencies>
+	<build>
+		<finalName>basic_struts</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.4.7.v20170914</version>
+				<configuration>
+					<webApp>
+						<contextPath>/${build.finalName}</contextPath>
+					</webApp>
+					<stopKey>CTRL+C</stopKey>
+					<stopPort>8999</stopPort>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<scanTargets>
+						<scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
+					</scanTargets>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
